@@ -1,0 +1,10 @@
+ Job Work
+Step 1) php artisan make:mail SendEmail 
+step 2) app/Mail/SendEmail.php (Code)
+Step 3) Create a Mail layout
+step 4) php artisan make:job SendUserEmailJob
+step 5) app/Jobs/SendUserEmailJob.php (Code)
+step 6) app/Http/Controllers/EmailController.php (code)
+step 7) Create a route to send email
+
+
