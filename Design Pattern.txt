@@ -1,0 +1,74 @@
+Design Pattern
+				Topic
+						MVC,
+						Services Container and Dependency Injection,
+						Facades,
+						Respository Pattern,
+						Observes Pattern, Model Observers and Events/Listeners,
+						Strategy Pattern,
+						Services Provider,
+						Sigleton Pattern,
+						Builder (Manger) Pattern, Query Builder and Eloquent,
+						Factory Pattern
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+
+
+Core Patterns in Laravel Architecture
+
+These are the patterns you interact with most frequently when using the framework.
+Service Container & Dependency Injection:
+										This is the heart of Laravel. It manages class dependencies and injects them automatically when needed, which decouples your code and makes it highly testable.
+
+Facades: 
+		Provides a "static" interface to classes available in the service container. It acts as a shortcut for complex behind-the-scenes logic, like using Cache::get() instead of manually resolving a cache manager.
+
+Builder Pattern:
+				Best seen in the Query Builder and Eloquent. It allows you to build complex database queries through a fluent interface (method chaining), where each method returns the object itself.
+Singleton Pattern:
+				  Laravel’s core application and many services (like the database connection or authentication manager) are singletons, meaning only one instance of the class exists throughout a single request lifecycle.
+Observer Pattern: 
+				Used heavily in Model Observers and Events/Listeners. This allows you to "watch" for certain actions (like a user being created) and trigger separate logic automatically without cluttering your main controller. 
+
+
+Common Implementation Patterns
+Beyond what the framework provides, developers often implement these specific patterns to organize business logic. 
+
+Repository Pattern:
+					Acts as a layer between your business logic and the database. It abstracts data access, allowing you to swap data sources (e.g., from MySQL to an API or Redis) without changing your controllers.
+Strategy Pattern:
+				Ideal for scenarios with multiple ways to perform a task, such as different payment gateways (Stripe, PayPal). You define a common interface and swap the underlying "strategy" class at runtime.
+Service Layer:
+			A common practice of moving business logic out of controllers and into dedicated "Service" classes to keep controllers lean and reusable.
+Factory Pattern:
+				Used to create objects without specifying the exact class to be created. Laravel uses this internally for sessions and drivers, and developers use it via Model Factories to generate test data.
+
+
+
+
+
+
+						
+Pattern Summary Table
+
+Pattern Type 		Examples in Laravel 							Benefit
+
+Architectural		MVC      										Separates data, UI, and logic.
+Creational			Service Container, Singleton, Factory			Manages how objects are created and shared.
+Structural			Facades, Adapter								Simplifies interfaces and connects different systems.
+Behavioral			Observers, Strategy, Chain of Responsibility	Manages how objects communicate and handle tasks.
+						
