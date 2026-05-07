@@ -11,29 +11,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/defer', function () {
-    $user = User::create([
-        'name' => "Name1",
-        'email' => "email1",
-        'password' => Hash::make('sdf')
-    ]);
 
-    // Deferred task
-    defer(function () use ($user) {
 
-        // This runs AFTER response
-
-        \Log::info('Deferred task running');
-
-        \Log::info('Welcome email sent to: ' . $user->email);
-
-        sleep(5);
-
-        \Log::info('Finished deferred task');
-    });
-    return $user;
-});
 
 
 
 Route::Get('user', [EmailController::class, 'sendEmail']);
+Route::Get('Send-email', [EmailController::class, 'add']);
+Route::Get('defer', [EmailController::class, 'defer']);
+Route::Get('store', [EmailController::class, 'store']);
